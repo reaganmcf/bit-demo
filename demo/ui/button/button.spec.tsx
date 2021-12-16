@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 import { PrimaryButton } from './button.composition';
 
 it('should render with the correct text', () => {
-  const { getByText } = render(<PrimaryButton />);
-  const rendered = getByText('Click me!');
+  const { getByText} = render(<PrimaryButton />);
+  const rendered = getByText('Primary Button');
   expect(rendered).toBeTruthy();
 });
