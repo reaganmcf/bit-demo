@@ -9,6 +9,10 @@ export const PrimaryButton = () => (
   <Button type='primary'>Primary Button</Button>
 );
 
-export const DangerButton = () => (
-  <Button danger>Primary</Button>
+export const TextButton = () => (
+  <Button type='text'>Text Button</Button>
+);
+
+export const LinkButton = () => (
+  <Button type='link'>Link Button</Button>
 );

@@ -21,9 +21,15 @@
         "mainFile": "index.ts",
         "rootDir": "demo/pages/welcome"
     },
+    "styles": {
+        "scope": "reaganmcf.demo",
+        "version": "0.1.0",
+        "mainFile": "index.scss",
+        "rootDir": "demo/styles"
+    },
     "ui/button": {
-        "scope": "",
-        "version": "",
+        "scope": "reaganmcf.demo",
+        "version": "0.1.0",
         "mainFile": "index.ts",
         "rootDir": "demo/ui/button"
     },

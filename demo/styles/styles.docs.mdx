@@ -1,0 +1,20 @@
+---
+description: 'rmcf-bit-demo scss styles'
+labels: ['general', 'styling']
+---
+
+Used throughout the application for global styling, such as color variables and mixins.
+
+## Usage
+
+To use the stylesheet in your own applications, add it to your `scss` like so
+
+```scss
+@use 'reaganmcf/demo.styles' as styles;
+
+.your_selector {
+  background-color: styles.$color-primary;
+}
+```
+
+

@@ -1,6 +1,6 @@
 ---
 description: 'To trigger an operation'
-labels: ['general', 'label2', 'label3']
+labels: ['general']
 ---
 
 import { Button } from './button';
@@ -15,10 +15,23 @@ A basic button
 
 ### Type
 
-There are `primary` buttons, and `default` buttons
+There are `primary` buttons, `default` buttons, `text` buttons, and `link` buttons.
 ```js live
 <>
   <Button>Default Button</Button>
   <Button type='primary'>Primary Button</Button>
+  <Button type='text'>Text Button</Button>
+  <Button type='link'>Link Button</Button>
+</>
+```
+
+### Danger Buttons
+
+```js live
+<>
+  <Button danger>Default</Button>
+  <Button danger type='primary'>Default</Button>
+  <Button danger type='text'>Text</Button>
+  <Button danger type='link'>Link Button</Button>
 </>
 ```

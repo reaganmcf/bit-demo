@@ -4,30 +4,43 @@ import styles from './button.module.scss';
 
 const cx = classNames.bind(styles);
 
-export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+export type ButtonProps = {
   /**
    * Set the danger status of the button
    */
-  danger: boolean | undefined,
+  danger?: boolean;
 
   /**
    * Set the disabled state of the button
    */
-  disabled: boolean | undefined,
+  disabled?: boolean;
 
   /**
-   * Can be set to `primary` `default` or `link`
+   * Can be set to `default` `primary` `text` or `link`
    */
-  type?: 'primary' | 'default' | 'link'
+  type?: 'default' | 'primary' | 'text' | 'link';
+
+  /**
+   * Callback when the button is clicked
+   */
+  onClick?: () => void;
 };
 
-export function Button({ danger = false, type = 'default', disabled = false, children, ...rest }) {
-
-  const classes = cx('button', { 'button-dangerous': !!danger, 'button-default': type === 'default' });
+export const Button: React.FC<ButtonProps> = ({
+  onClick,
+  danger = false,
+  type = 'default',
+  disabled = false,
+  children,
+}) => {
+  const classes = cx('button', {
+    [`button-${type}`]: type,
+    [`button-${type}-dangerous`]: danger
+  });
 
   return (
-    <button className={classes} {...rest}>
+    <button className={classes} onClick={onClick} disabled={disabled}>
       {children}
     </button>
   );
-}
+};

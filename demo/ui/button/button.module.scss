@@ -1,10 +1,16 @@
-.button {
-  color: white;
-  background-color: #1690FF;
-  box-shadow: 1px 1px 2px #dddddd;
-  border: none;
-  padding: 5px 10px;
+@use '@reaganmcf/demo.styles' as styles;
+
+%basic-btn {
+  background: none;
+  border: 1px solid #d9d9d9;
+  color: black;
+  box-shadow: none;
   border-radius: 2px;
+  padding: 5px 10px;
+}
+
+.button {
+  @extend %basic-btn; 
 
   &:hover,
   &:focus {
@@ -12,19 +18,37 @@
     opacity: 80%;
   }
 
-  &-default {
-    background: none;
-    border: 1px solid #D9D9D9;
-    color: black;
-    box-shadow: none;
-  
-    &:hover,
-    &:focused {
-      border: 1px solid #1690FF; 
-    }
+  &-primary {
+    color: white;
+    background-color: styles.$color-primary;
+    box-shadow: 1px 1px 2px #dddddd;
+    border: none;
   }
-  
-  &-dangerous {
-    background-color: #FF4D4F;
+
+  &-text {
+    border: none;
+  }
+
+  &-link {
+    border: none;
+    color: styles.$color-primary;
+  }
+
+  &-default-dangerous {
+    border-color: styles.$color-danger;
+    color: styles.$color-danger;
+  }
+
+  &-primary-dangerous {
+    background-color: styles.$color-danger;
+  }
+
+  &-text-dangerous {
+    border: none;
+    color: styles.$color-danger;
+  }
+
+  &-link-dangerous {
+    color: styles.$color-danger;
   }
 }
